@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS `#__spsimpleportfolio_items` (
   `alias` varchar(55) NOT NULL,
   `catid` int(11) NOT NULL,
   `image` text NOT NULL,
+  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `video` text NOT NULL,
   `description` mediumtext,
   `client` varchar(100) NOT NULL DEFAULT '',
