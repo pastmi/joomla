@@ -35,7 +35,9 @@ if($this->item->video) {
 	}
 }
 ?>
-
+<script type="text/javascript">
+	console.log('item page');
+</script>
 <div id="sp-simpleportfolio" class="sp-simpleportfolio sp-simpleportfolio-view-item">
 	<div class="sp-simpleportfolio-image">
 		<?php if($this->item->video) { ?>

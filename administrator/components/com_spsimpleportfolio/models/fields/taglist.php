@@ -15,9 +15,6 @@ class JFormFieldTaglist extends JFormField {
 
 	protected function getInput() {
 
-		$doc = JFactory::getDocument();
-		$doc->addScript(JURI::base(true) . '/components/com_spsimpleportfolio/assets/js/tags.js');
-
 		$html = array();
 		$attr = '';
 		$attr .= !empty($this->class) ? ' class="' . $this->class . '"' : '';
@@ -38,10 +35,10 @@ class JFormFieldTaglist extends JFormField {
 
 		$db = JFactory::getDbo();
 		$query = $db->getQuery(true)
-			->select('DISTINCT a.id AS value, a.title AS text')
+			->select('DISTINCT a.id AS value, a.title AS text, a.image AS image')
 			->from('#__spsimpleportfolio_tags AS a');
 
-		$query->order('a.id ASC');
+//		$query->order('a.id ASC');
 		$db->setQuery($query);
 		$options = $db->loadObjectList();
 

@@ -21,7 +21,7 @@ if( $this->params->get('show_page_heading') && $this->params->get( 'page_heading
 	echo "<h1 class='page-header'>" . $this->params->get( 'page_heading' ) . "</h1>";
 }
 ?>
-
+<?php print_r($this); ?>
 <div id="sp-simpleportfolio" class="sp-simpleportfolio sp-simpleportfolio-view-items layout-<?php echo $this->layout_type; ?>">
 	<?php if($this->params->get('show_filter', 1)) { ?>
 	<div class="sp-simpleportfolio-filter">
@@ -33,37 +33,9 @@ if( $this->params->get('show_page_heading') && $this->params->get( 'page_heading
 		</ul>
 	</div>
 	<?php } ?>
-
-	<?php
-	//Videos
-	foreach ($this->items as $key => $this->item) {
-		if($this->item->video) {
-			$video = parse_url($this->item->video);
-
-			switch($video['host']) {
-				case 'youtu.be':
-				$video_id 	= trim($video['path'],'/');
-				$video_src 	= '//www.youtube.com/embed/' . $video_id;
-				break;
-
-				case 'www.youtube.com':
-				case 'youtube.com':
-				parse_str($video['query'], $query);
-				$video_id 	= $query['v'];
-				$video_src 	= '//www.youtube.com/embed/' . $video_id;
-				break;
-
-				case 'vimeo.com':
-				case 'www.vimeo.com':
-				$video_id 	= trim($video['path'],'/');
-				$video_src 	= "//player.vimeo.com/video/" . $video_id;
-			}
-
-			echo '<iframe class="sp-simpleportfolio-lightbox" src="'. $video_src .'" width="500" height="281" id="sp-simpleportfolio-video'.$this->item->id.'" style="border:none;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
-		}
-	}
-	?>
-
+	<script type="text/javascript">
+		console.log('main page');
+	</script>
 	<div class="sp-simpleportfolio-items sp-simpleportfolio-columns-<?php echo $this->params->get('columns', 3); ?>">
 		<?php foreach ($this->items as $this->item) { ?>
 		<div class="sp-simpleportfolio-item" data-groups='[<?php echo $this->item->groups; ?>]'>

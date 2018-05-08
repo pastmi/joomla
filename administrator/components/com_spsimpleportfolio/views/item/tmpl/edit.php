@@ -23,6 +23,7 @@ JHtml::_('formbehavior.chosen', 'select', null, array('disable_search_threshold'
       </div>
 
       <div class="span3">
+        <script type="text/javascript">console.log('edit.item');</script>
         <fieldset class="form-vertical">
           <?php echo $this->form->renderFieldset('sidebar'); ?>
         </fieldset>

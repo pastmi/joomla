@@ -10,7 +10,6 @@
 defined('_JEXEC') or die();
 
 JLoader::register('JHtmlString', JPATH_LIBRARIES.'/joomla/html/html/string.php');
-
 class SpsimpleportfolioViewItem extends JViewLegacy {
 
 	protected $item;
