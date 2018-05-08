@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8895a82-4e07-4838-b6c1-83a7ec67b442" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/forms/item.xml" afterPath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/forms/item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/sql/install/mysql/install.sql" afterPath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/sql/install/mysql/install.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/language/en-GB/en-GB.com_spsimpleportfolio.ini" afterPath="$PROJECT_DIR$/administrator/language/en-GB/en-GB.com_spsimpleportfolio.ini" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_spsimpleportfolio/controller.php" afterPath="$PROJECT_DIR$/components/com_spsimpleportfolio/controller.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +36,8 @@
       <file leaf-file-name="controller.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/components/com_spsimpleportfolio/controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="62" column="109" lean-forward="false" selection-start-line="62" selection-start-column="109" selection-end-line="62" selection-end-column="109" />
+            <state relative-caret-position="442">
+              <caret line="68" column="78" lean-forward="false" selection-start-line="68" selection-start-column="78" selection-end-line="68" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -257,12 +254,12 @@
       <option name="presentableId" value="Default" />
       <updated>1525682681544</updated>
       <workItem from="1525682685209" duration="5749000" />
-      <workItem from="1525771497286" duration="7916000" />
+      <workItem from="1525771497286" duration="8327000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13665000" />
+    <option name="totallyTimeSpent" value="14076000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -581,7 +578,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -652,8 +649,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/com_spsimpleportfolio/controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="62" column="109" lean-forward="false" selection-start-line="62" selection-start-column="109" selection-end-line="62" selection-end-column="109" />
+        <state relative-caret-position="442">
+          <caret line="68" column="78" lean-forward="false" selection-start-line="68" selection-start-column="78" selection-end-line="68" selection-end-column="78" />
           <folding />
         </state>
       </provider>

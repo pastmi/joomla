@@ -64,8 +64,9 @@ class SpsimpleportfolioController extends JControllerLegacy {
                 ->from('#__spsimpleportfolio_items AS a');
 
             $db->setQuery($query);
-            var_dump($db->loadObjectList());
+            $count = count($db->loadObjectList());
             $options = $db->loadObjectList();
+            $options['count_of_pages'] = ( $count < 10) ? 1 : ceil($count/10);
             echo new JResponseJson($options);
         }
         catch(Exception $e)
