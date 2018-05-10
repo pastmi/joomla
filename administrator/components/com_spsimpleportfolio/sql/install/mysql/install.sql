@@ -28,5 +28,6 @@ CREATE TABLE IF NOT EXISTS `#__spsimpleportfolio_tags` (
   `title` varchar(255) NOT NULL,
   `alias` varchar(55) NOT NULL,
   `image` text NOT NULL,
+  `catid` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
