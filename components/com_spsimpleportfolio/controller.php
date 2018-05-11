@@ -8,7 +8,35 @@
 */
 jimport('joomla.application.component.controller');
 class SpsimpleportfolioController extends JControllerLegacy {
-
+    function getJsonAuthorId () {
+        try
+        {
+            $db = JFactory::getDbo();
+            $id = (int)JRequest::getVar('id');
+            $query = $db->getQuery(true)
+                ->select( $db->quoteName(array('id', 'title', 'description','params')) )
+                ->from($db->quoteName('#__categories'))
+                ->where($db->quoteName('extension') . ' = '. $db->quote('com_spsimpleportfolio') . ' AND ' . $db->quoteName('id') . ' = '. $id);
+            $db->setQuery($query);
+            $options = $db->loadObjectList();
+            foreach ($options as $option) {
+                $image = json_decode($option->params)->image;
+                $newquery = $db->getQuery(true)
+                    ->select(array('title AS name','image'))
+                    ->from($db->quoteName('#__spsimpleportfolio_tags'))
+                    ->where($db->quoteName('catid') . ' = '. $option->id);
+                $db->setQuery($newquery);
+                $options['list_of_pictures'][] = $db->loadObjectList();
+                $option->image = $image;
+                $option->params = NULL;
+            }
+            echo new JResponseJson($options);
+        }
+        catch(Exception $e)
+        {
+            echo new JResponseJson($e);
+        }
+    }
     function getJsonAuthors () {
         try
         {
@@ -16,34 +44,25 @@ class SpsimpleportfolioController extends JControllerLegacy {
             $page = (int)JRequest::getVar('page');
             $page = isset($page) ? ($page * 10) - 10 : 0;
             $query = $db->getQuery(true)
-                ->select( $db->quoteName(array('id', 'title', 'description','params')) )
+                ->select( $db->quoteName(array('id', 'title' , 'description','params')) )
                 ->from($db->quoteName('#__categories'))
-                ->where($db->quoteName('extension') . ' = '. $db->quote('com_spsimpleportfolio'));
-//            $query = $db->getQuery(true)
-//                ->select('DISTINCT a.id AS value, a.title AS text, a.image AS image, a.tagids as tagids, a.published AS published, a.date AS date')
-//                ->from('#__categories AS a')
-//                ->setLimit(10, $page);
-
+                ->where($db->quoteName('extension') . ' = '. $db->quote('com_spsimpleportfolio'))
+                ->setLimit(10, $page);
             $db->setQuery($query);
-//            $tags = $db->loadObject()->tagids;
-//            if(!is_array($tags)) {
-//                $tags = (array) json_decode($tags, true);
-//            }
-//            $tags = implode(',', $tags);
-//            $tags = explode(',', $tags);
-//            $count = count($db->loadObjectList());
+            $count = count($db->loadObjectList());
             $options = $db->loadObjectList();
             foreach ($options as $option) {
+                $image = json_decode($option->params)->image;
                 $newquery = $db->getQuery(true)
-                    ->select(array('catid', 'COUNT(*)'))
+                    ->select(array('catid', 'COUNT(catid) AS count'))
                     ->from($db->quoteName('#__spsimpleportfolio_tags'))
-                    ->where($db->quoteName('id')." IN (" . $option->id . ")");
+                    ->where($db->quoteName('catid') . ' = '. $option->id);
                 $db->setQuery($newquery);
-                $option->cont_of_images = $db->loadObjectList()->catid;
-                var_dump($newquery);
+                $option->image = $image;
+                $option->count_of_images = $db->loadObjectList()[0]->count;
+                $option->params = NULL;
             }
-//            $options[$db->loadObject()->value]['imagecount'] = count($tags);
-//            $options['count_of_pages'] = ( $count <= 10) ? 1 : ceil($count/10);
+            $options['count_of_pages'] = ( $count <= 10) ? 1 : ceil($count/10);
             echo new JResponseJson($options);
         }
         catch(Exception $e)
@@ -55,16 +74,20 @@ class SpsimpleportfolioController extends JControllerLegacy {
     function getJsonPictures () {
         try
         {
-            $ids = JRequest::getVar('id');
+            $id = JRequest::getVar('id');
             $db = JFactory::getDbo();
             $query = $db->getQuery(true);
-
+            $query->select($db->quoteName(array('tagids')));
+            $query->from($db->quoteName('#__spsimpleportfolio_items'));
+            $query->where($db->quoteName('id') . ' = '. $id);
+            $db->setQuery($query);
+            $ids = $db->loadObjectList()[0]->tagids;
             if(!is_array($ids)) {
-                $ids = (array) json_decode($ids, true);
+                $ids = (array) json_decode($ids, $id);
             }
 
             $ids = implode(',', $ids);
-
+            $query = $db->getQuery(true);
             $query->select($db->quoteName(array('id', 'title', 'alias','image')));
             $query->from($db->quoteName('#__spsimpleportfolio_tags'));
             $query->where($db->quoteName('id')." IN (" . $ids . ")");
@@ -78,24 +101,6 @@ class SpsimpleportfolioController extends JControllerLegacy {
         {
             echo new JResponseJson($e);
         }
-    }
-    function getJsonPicturesList () {
-        try
-        {
-            $db = JFactory::getDbo();
-            $query = $db->getQuery(true)
-                ->select('DISTINCT a.id AS value, a.title AS text, a.image AS image')
-                ->from('#__spsimpleportfolio_tags AS a');
-
-            $db->setQuery($query);
-            $options = $db->loadObjectList();
-            echo new JResponseJson($options);
-        }
-        catch(Exception $e)
-        {
-            echo new JResponseJson($e);
-        }
-
     }
     function getJsonExhibitions () {
         try
