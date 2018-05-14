@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8895a82-4e07-4838-b6c1-83a7ec67b442" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/controllers/year.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/controllers/years.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/forms/filter_years.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/forms/year.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/year.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/years.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/tables/year.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/views/year/tmpl/edit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/views/year/view.html.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/views/years/tmpl/default.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/views/years/view.html.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/assets/js/tags.js" afterPath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/assets/js/tags.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/helpers/spsimpleportfolio.php" afterPath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/helpers/spsimpleportfolio.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/fields/taglist.php" afterPath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/fields/taglist.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/forms/item.xml" afterPath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/forms/item.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/forms/year.xml" afterPath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/forms/year.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/sql/install/mysql/install.sql" afterPath="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/sql/install/mysql/install.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/language/en-GB/en-GB.com_spsimpleportfolio.ini" afterPath="$PROJECT_DIR$/administrator/language/en-GB/en-GB.com_spsimpleportfolio.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_spsimpleportfolio/controller.php" afterPath="$PROJECT_DIR$/components/com_spsimpleportfolio/controller.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,11 +15,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="controller.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="controller.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/com_spsimpleportfolio/controller.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="258">
               <caret line="157" column="35" lean-forward="false" selection-start-line="157" selection-start-column="35" selection-end-line="157" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="install.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/sql/install/mysql/install.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="482">
+              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="item.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/forms/item.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -77,16 +82,13 @@
         <option value="$PROJECT_DIR$/components/com_spsimpleportfolio/views/abc/view.raw.php" />
         <option value="$PROJECT_DIR$/components/com_spsimpleportfolio/views/abc/view.json.php" />
         <option value="$PROJECT_DIR$/components/com_spsimpleportfolio/assets/js/spsimpleportfolio.js" />
-        <option value="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/forms/item.xml" />
         <option value="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/views/tags/tmpl/default.php" />
         <option value="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/fields/taglist.php" />
         <option value="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/assets/js/tags.js" />
         <option value="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/years.php" />
-        <option value="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/sql/install/mysql/install.sql" />
         <option value="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/tables/year.php" />
         <option value="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/views/years/tmpl/default.php" />
         <option value="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/forms/tag.xml" />
-        <option value="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/forms/year.xml" />
         <option value="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/helpers/spsimpleportfolio.php" />
         <option value="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/year.php" />
         <option value="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/controllers/years.php" />
@@ -95,6 +97,9 @@
         <option value="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/views/year/view.html.php" />
         <option value="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/views/years/view.html.php" />
         <option value="$PROJECT_DIR$/components/com_spsimpleportfolio/controller.php" />
+        <option value="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/sql/install/mysql/install.sql" />
+        <option value="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/forms/year.xml" />
+        <option value="$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/forms/item.xml" />
       </list>
     </option>
   </component>
@@ -138,6 +143,36 @@
               <item name="joomla" type="b2602c69:ProjectViewProjectNode" />
               <item name="joomla" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="administrator" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="joomla" type="b2602c69:ProjectViewProjectNode" />
+              <item name="joomla" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="administrator" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="joomla" type="b2602c69:ProjectViewProjectNode" />
+              <item name="joomla" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="administrator" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="com_spsimpleportfolio" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="joomla" type="b2602c69:ProjectViewProjectNode" />
+              <item name="joomla" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="administrator" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="com_spsimpleportfolio" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="joomla" type="b2602c69:ProjectViewProjectNode" />
+              <item name="joomla" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="administrator" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="com_spsimpleportfolio" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="forms" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="joomla" type="b2602c69:ProjectViewProjectNode" />
@@ -207,12 +242,12 @@
       <workItem from="1526276884388" duration="234000" />
       <workItem from="1526281720162" duration="192000" />
       <workItem from="1526301644983" duration="7000" />
-      <workItem from="1526326962961" duration="4592000" />
+      <workItem from="1526326962961" duration="5566000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30860000" />
+    <option name="totallyTimeSpent" value="31834000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -452,14 +487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/forms/item.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/helpers/spsimpleportfolio.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -516,14 +543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/sql/install/mysql/install.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="40" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/views/years/tmpl/default.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
@@ -544,14 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="4" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/forms/year.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="154" lean-forward="false" selection-start-line="5" selection-start-column="154" selection-end-line="5" selection-end-column="154" />
           <folding />
         </state>
       </provider>
@@ -640,6 +651,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
           <caret line="157" column="35" lean-forward="false" selection-start-line="157" selection-start-column="35" selection-end-line="157" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/forms/year.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/sql/install/mysql/install.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_spsimpleportfolio/models/forms/item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>
