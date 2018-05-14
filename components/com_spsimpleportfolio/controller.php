@@ -148,6 +148,24 @@ class SpsimpleportfolioController extends JControllerLegacy {
         {
             echo new JResponseJson($e);
         }
+    }
+    function getJsonYears () {
+        try
+        {
+            $db = JFactory::getDbo();
+
+            $query = $db->getQuery(true)
+                ->select('DISTINCT a.title AS name, a.description AS information')
+                ->from('#__spsimpleportfolio_years AS a');
+
+            $db->setQuery($query);
+            $options = $db->loadObjectList();
+            echo new JResponseJson($options);
+        }
+        catch(Exception $e)
+        {
+            echo new JResponseJson($e);
+        }
 
     }
 }

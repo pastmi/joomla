@@ -7,6 +7,7 @@
 
 jQuery(function($) {
 	$(document).ready(function () {
+
 		var customTagPrefix = '#new#';
 		$('#jform_tagids_chzn input').keyup(function(event) {
 

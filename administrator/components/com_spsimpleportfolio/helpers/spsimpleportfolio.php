@@ -32,6 +32,11 @@ class SpsimpleportfolioHelper {
       'index.php?option=com_spsimpleportfolio&view=tags',
       $submenu == 'tags'
     );
+      JHtmlSidebar::addEntry(
+          JText::_('COM_SPSIMPLEPORTFOLIO_TITLE_YEARS'),
+          'index.php?option=com_spsimpleportfolio&view=years',
+          $submenu == 'years'
+      );
   }
 
   public static function getActions($messageId = 0) {

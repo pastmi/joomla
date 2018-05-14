@@ -25,7 +25,7 @@ class JFormFieldTaglist extends JFormField {
 		$attr .= $this->onchange ? ' onchange="' . $this->onchange . '"' : '';
 
 		$options = $this->getTags();
-		$attr .= $this->dataOptions ? $options : '';
+		$attr .= 'data-options=' . json_encode($options);
         $html[] = JHtml::_('select.genericlist', $options, $this->name, trim($attr), 'value', 'text', $this->value, $this->id);
 
         return implode($html);
