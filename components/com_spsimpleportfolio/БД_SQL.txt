@@ -1,0 +1,58 @@
+USE MASTER
+GO
+IF EXISTS (SELECT * FROM sys.databases WHERE name = 'lab_11')
+DROP DATABASE lab_11
+CREATE DATABASE lab_11
+USE lab_11
+GO
+
+CREATE TABLE Roles
+(
+	ID_Role	int NOT NULL AUTO INCREMENT,
+	Role varchar(10) NOT NULL,
+    constraint ID_Role primary key (ID_Role)
+);
+
+CREATE TABLE Students
+(
+	ID_Student int NOT NULL AUTO INCREMENT,
+	FirstName varchar(20) NOT NULL,
+	SecondName varchar(20) NOT NULL,
+	MiddleName varchar(20) NOT NULL,
+	DateOfAdmision Date NOT NULL,
+	Role_ID int,
+    Login varchar(10) UNIQUE NOT NULL,
+    Password varchar(32) NOT NULL,
+	CONSTRAINT ID_Student PRIMARY KEY (ID_Student),
+	CONSTRAINT Role_ID FOREIGN KEY (Role_ID) REFERENCES Roles(ID_Role),
+);
+
+CREATE TABLE Enter/Exit
+(
+	ID Int UNIQUE NOT NULL AUTO INCREMENT,
+	EnterDate Date NOT NULL,
+	Student_ID int NOT NULL,
+	CONSTRAINT ID PRIMARY KEY (ID),
+	CONSTRAINT Student_ID FOREIGN KEY (Student_ID) REFERENCES Students(ID_Student)
+);
+
+CREATE TABLE News
+(
+	ID_News int UNIQUE NOT NULL,
+	Title varchar(50) NOT NULL,
+	AddingDate Date NOT NULL,
+	Enter_ID Int NOT NULL,
+	CONSTRAINT ID_News PRIMARY KEY (ID_News),
+	CONSTRAINT Enter_ID FOREIGN KEY (Enter_ID) REFERENCES Enter/Exit(ID),
+);
+
+CREATE TABLE Comments
+(
+	ID_com int UNIQUE NOT NULL,
+	Content TEXT NOT NULL,
+	ID_News int	NOT NULL,
+	Enter_ID int NOT NULL,
+	constraint ID_com PRIMARY KEY (ID_com),
+    constraint ID_News FOREIGN KEY (ID_News) REFERENCES News(ID_News),
+    constraint Enter_ID FOREIGN KEY (Enter_ID) REFERENCES Enter/Exit(ID)
+);

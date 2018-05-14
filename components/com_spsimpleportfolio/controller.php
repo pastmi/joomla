@@ -26,9 +26,12 @@ class SpsimpleportfolioController extends JControllerLegacy {
                     ->from($db->quoteName('#__spsimpleportfolio_tags'))
                     ->where($db->quoteName('catid') . ' = '. $option->id);
                 $db->setQuery($newquery);
-                $options['list_of_pictures'][] = $db->loadObjectList();
-                $option->image = $image;
+                $options['list_of_pictures'] = $db->loadObjectList();
+                $option->image = '//'.$_SERVER['SERVER_NAME'].'/'.$image;
                 $option->params = NULL;
+            }
+            foreach($options['list_of_pictures'] as $option) {
+                $option->image = '//'.$_SERVER['SERVER_NAME'].'/'.$option->image;
             }
             echo new JResponseJson($options);
         }
@@ -58,12 +61,13 @@ class SpsimpleportfolioController extends JControllerLegacy {
                     ->from($db->quoteName('#__spsimpleportfolio_tags'))
                     ->where($db->quoteName('catid') . ' = '. $option->id);
                 $db->setQuery($newquery);
-                $option->image = $image;
+                $option->image = '//'.$_SERVER['SERVER_NAME'].'/'.$image;
                 $option->count_of_images = $db->loadObjectList()[0]->count;
                 $option->params = NULL;
             }
-            $options['count_of_pages'] = ( $count <= 10) ? 1 : ceil($count/10);
-            echo new JResponseJson($options);
+            $response['list'] = $options;
+            $response['count_of_pages'] = ( $count <= 10) ? 1 : ceil($count/10);
+            echo new JResponseJson($response);
         }
         catch(Exception $e)
         {
@@ -118,6 +122,7 @@ class SpsimpleportfolioController extends JControllerLegacy {
             $count = count($db->loadObjectList());
             $options = $db->loadObjectList();
             foreach ($options as $option) {
+                $option->image = '//'.$_SERVER['SERVER_NAME'].'/'.$option->image;
                 $tags = $option->tagids;
                 if(!is_array($tags)) {
                     $tags = (array) json_decode($tags, true);
@@ -126,8 +131,9 @@ class SpsimpleportfolioController extends JControllerLegacy {
                 $tags = explode(',', $tags);
                 $option->count_of_images = count($tags);
             }
-            $options['count_of_pages'] = ( $count <= 10) ? 1 : ceil($count/10);
-            echo new JResponseJson($options);
+            $response['list'] = $options;
+            $response['count_of_pages'] = ( $count <= 10) ? 1 : ceil($count/10);
+            echo new JResponseJson($response);
         }
         catch(Exception $e)
         {
