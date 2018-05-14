@@ -79,9 +79,6 @@ $listDirn = $this->escape($this->filter_order_Dir);
 										<?php echo $this->escape($item->title); ?>
 									<?php endif; ?>
 
-									<span class="small break-word">
-										<?php echo JText::sprintf('JGLOBAL_LIST_ALIAS', $this->escape($item->alias)); ?>
-									</span>
 								</td>
 								<td align="center">
 									<?php echo $item->id; ?>
