@@ -92,14 +92,23 @@ class SpsimpleportfolioController extends JControllerLegacy {
 
             $ids = implode(',', $ids);
             $query = $db->getQuery(true);
-            $query->select($db->quoteName(array('id', 'title', 'alias','image')));
+            $query->select($db->quoteName(array('id', 'title', 'alias','image','catid')));
             $query->from($db->quoteName('#__spsimpleportfolio_tags'));
             $query->where($db->quoteName('id')." IN (" . $ids . ")");
 
             $query->order('id ASC');
 
             $db->setQuery($query);
-            echo new JResponseJson($db->loadObjectList());
+            $objects = $db->loadObjectList();
+            foreach ($objects as $object) {
+                $newquery = $db->getQuery(true)
+                    ->select(array('title'))
+                    ->from($db->quoteName('#__categories'))
+                    ->where($db->quoteName('id') . ' = '. $object->catid);
+                $db->setQuery($newquery);
+                $object->nameAuthor = $db->loadObjectList()[0]->title;
+            }
+            echo new JResponseJson($objects);
         }
         catch(Exception $e)
         {

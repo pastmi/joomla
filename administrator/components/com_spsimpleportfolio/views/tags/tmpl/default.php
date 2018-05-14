@@ -13,6 +13,7 @@ JHtml::_('formbehavior.chosen', 'select');
 
 $user		= JFactory::getUser();
 $userId		= $user->get('id');
+$cParams = JComponentHelper::getParams('com_spsimpleportfolio');
 
 $listOrder = $this->escape($this->filter_order);
 $listDirn = $this->escape($this->filter_order_Dir);
@@ -41,6 +42,9 @@ $listDirn = $this->escape($this->filter_order_Dir);
 					<th width="2%" class="hidden-phone">
 						<?php echo JHtml::_('grid.checkall'); ?>
 					</th>
+                    <th width="10%" class="center">
+                        <?php echo JText::_('COM_SPSIMPLEPORTFOLIO_HEADING_IMAGE'); ?>
+                    </th>
 					<th>
 						<?php echo JHtml::_('grid.sort', 'JGLOBAL_TITLE', 'a.title', $listDirn, $listOrder); ?>
 					</th>
@@ -69,6 +73,23 @@ $listDirn = $this->escape($this->filter_order_Dir);
 								<td class="hidden-phone">
 									<?php echo JHtml::_('grid.id', $i, $item->id); ?>
 								</td>
+                                <td class="center">
+                                    <?php
+                                    $folder = JPATH_ROOT . '/images/spsimpleportfolio/' . $item->alias;
+                                    $ext = JFile::getExt($item->image);
+                                    $base_name = JFile::stripExt(basename($item->image));
+                                    $thumb = $base_name . '_' .strtolower($cParams->get('square', '600x600')) . '.' . $ext;
+                                    if(JFile::exists($folder . '/' . $thumb)) {
+                                        ?>
+                                        <img src="<?php echo JURI::root() . 'images/spsimpleportfolio/' . $item->alias . '/' . $thumb; ?>" alt="" style="width: 64px; height: 64px; border: 1px solid #e5e5e5; background-color: #f5f5f5;">
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <img src="<?php echo JURI::root() . $item->image; ?>" alt="" style="width: 64px; height: 64px; border: 1px solid #e5e5e5; background-color: #f5f5f5;">
+                                        <?php
+                                    }
+                                    ?>
+                                </td>
 								<td>
 									<?php if ($canEdit) : ?>
 										<a href="<?php echo JRoute::_('index.php?option=com_spsimpleportfolio&task=tag.edit&id='.$item->id);?>">
@@ -82,7 +103,6 @@ $listDirn = $this->escape($this->filter_order_Dir);
 										<?php echo JText::sprintf('JGLOBAL_LIST_ALIAS', $this->escape($item->alias)); ?>
 									</span>
 								</td>
-
 								<td align="center">
 									<?php echo $item->id; ?>
 								</td>

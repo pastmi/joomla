@@ -25,10 +25,10 @@ class JFormFieldTaglist extends JFormField {
 		$attr .= $this->onchange ? ' onchange="' . $this->onchange . '"' : '';
 
 		$options = $this->getTags();
+		$attr .= $this->dataOptions ? $options : '';
+        $html[] = JHtml::_('select.genericlist', $options, $this->name, trim($attr), 'value', 'text', $this->value, $this->id);
 
-		$html[] = JHtml::_('select.genericlist', $options, $this->name, trim($attr), 'value', 'text', $this->value, $this->id);
-
-		return implode($html);
+        return implode($html);
 	}
 
 	private function getTags() {
@@ -41,7 +41,6 @@ class JFormFieldTaglist extends JFormField {
 //		$query->order('a.id ASC');
 		$db->setQuery($query);
 		$options = $db->loadObjectList();
-
 		return $options;
 	}
 
