@@ -38,7 +38,7 @@ class SpsimpleportfolioViewYear extends JViewLegacy {
 		$input = JFactory::getApplication()->input;
 		$input->set('hidemainmenu', true);
 		$isNew = ($this->item->id == 0);
-		JToolBarHelper::title(JText::_('COM_SPSIMPLEPORTFOLIO_MANAGER') .  ($isNew ? JText::_('COM_SPSIMPLEPORTFOLIO_TAG_NEW') : JText::_('COM_SPSIMPLEPORTFOLIO_TAG_EDIT')), 'pictures');
+		JToolBarHelper::title(JText::_('COM_SPSIMPLEPORTFOLIO_MANAGER') .  ($isNew ? JText::_('COM_SPSIMPLEPORTFOLIO_YEAR_NEW') : JText::_('COM_SPSIMPLEPORTFOLIO_YEAR_EDIT')), 'pictures');
 
 		if ($this->canDo->get('core.edit')) {
 			JToolBarHelper::apply('year.apply', 'JTOOLBAR_APPLY');
