@@ -108,7 +108,11 @@ class SpsimpleportfolioController extends JControllerLegacy {
                 $db->setQuery($newquery);
                 $object->nameAuthor = $db->loadObjectList()[0]->title;
             }
-            echo new JResponseJson($objects);
+            $response['list_of_pictures'] = $objects;
+            foreach($response['list_of_pictures'] as $option) {
+                $option->image = '//'.$_SERVER['SERVER_NAME'].'/'.$option->image;
+            }
+            echo new JResponseJson($response);
         }
         catch(Exception $e)
         {
