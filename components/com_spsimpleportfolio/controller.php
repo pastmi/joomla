@@ -123,8 +123,16 @@ class SpsimpleportfolioController extends JControllerLegacy {
         try
         {
             $db = JFactory::getDbo();
+            $db = JFactory::getDbo();
             $page = (int)JRequest::getVar('page');
             $page = isset($page) ? ($page * 10) - 10 : 0;
+
+            $querys = $db->getQuery(true)
+                ->select(array('COUNT(*) AS count'))
+                ->from($db->quoteName('#__spsimpleportfolio_items'));
+
+            $db->setQuery($querys);
+            $count = $db->loadObjectList()[0]->count;
 
             $query = $db->getQuery(true)
                 ->select('DISTINCT a.id AS value, a.title AS text, a.image AS image, a.tagids as tagids, a.published AS published, a.date AS date')
@@ -132,7 +140,6 @@ class SpsimpleportfolioController extends JControllerLegacy {
                 ->setLimit(10, $page);
 
             $db->setQuery($query);
-            $count = count($db->loadObjectList());
             $options = $db->loadObjectList();
             foreach ($options as $option) {
                 $option->image = '//'.$_SERVER['SERVER_NAME'].'/'.$option->image;
