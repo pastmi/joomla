@@ -46,13 +46,21 @@ class SpsimpleportfolioController extends JControllerLegacy {
             $db = JFactory::getDbo();
             $page = (int)JRequest::getVar('page');
             $page = isset($page) ? ($page * 10) - 10 : 0;
+
+            $querys = $db->getQuery(true)
+                ->select(array('COUNT(*) AS count'))
+                ->from($db->quoteName('#__categories'))
+                ->where($db->quoteName('extension') . ' = '. $db->quote('com_spsimpleportfolio'));
+
+            $db->setQuery($querys);
+            $count = $db->loadObjectList()[0]->count;
+
             $query = $db->getQuery(true)
                 ->select( $db->quoteName(array('id', 'title' , 'description','params')) )
                 ->from($db->quoteName('#__categories'))
                 ->where($db->quoteName('extension') . ' = '. $db->quote('com_spsimpleportfolio'))
                 ->setLimit(10, $page);
             $db->setQuery($query);
-            $count = count($db->loadObjectList());
             $options = $db->loadObjectList();
             foreach ($options as $option) {
                 $image = json_decode($option->params)->image;
