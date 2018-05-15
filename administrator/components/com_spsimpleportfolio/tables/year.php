@@ -16,7 +16,6 @@ class SpsimpleportfolioTableYear extends JTable {
 	}
 
 	public function store($updateNulls = false) {
-        
 		return parent::store($updateNulls);
 	}
 

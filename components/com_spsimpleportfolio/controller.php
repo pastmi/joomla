@@ -59,6 +59,7 @@ class SpsimpleportfolioController extends JControllerLegacy {
                 ->select( $db->quoteName(array('id', 'title' , 'description','params')) )
                 ->from($db->quoteName('#__categories'))
                 ->where($db->quoteName('extension') . ' = '. $db->quote('com_spsimpleportfolio'))
+                ->order('id DESC')
                 ->setLimit(10, $page);
             $db->setQuery($query);
             $options = $db->loadObjectList();
@@ -145,8 +146,8 @@ class SpsimpleportfolioController extends JControllerLegacy {
             $query = $db->getQuery(true)
                 ->select('DISTINCT a.id AS value, a.title AS text, a.image AS image, a.tagids as tagids, a.published AS published, a.date AS date')
                 ->from('#__spsimpleportfolio_items AS a')
+                ->order('id DESC')
                 ->setLimit(10, $page);
-
             $db->setQuery($query);
             $options = $db->loadObjectList();
             foreach ($options as $option) {
