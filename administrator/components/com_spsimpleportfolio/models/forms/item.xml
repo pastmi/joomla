@@ -3,7 +3,7 @@
 	<fieldset name="basic">
 		<field name="id" type="hidden" />
 		<field name="title" type="text" label="JGLOBAL_TITLE" description="JFIELD_TITLE_DESC" class="input-large-text" size="40" required="true" />
-		<field id="alias" name="alias" type="text" label="JFIELD_ALIAS_LABEL" description="JFIELD_ALIAS_DESC" hint="JFIELD_ALIAS_PLACEHOLDER" size="40" />
+		<field id="alias" name="alias" type="hidden" label="JFIELD_ALIAS_LABEL" description="JFIELD_ALIAS_DESC" hint="JFIELD_ALIAS_PLACEHOLDER" size="40" />
 		<field name="date" type="calendar" label="COM_SPSIMPLEPORTFOLIO_ITEMS_DATE_LABEL" description="COM_SPSIMPLEPORTFOLIO_ITEMS_DATE_DESC" />
 		<field name="image" type="media" label="COM_SPSIMPLEPORTFOLIO_ITEMS_IMAGE_LABEL" description="COM_SPSIMPLEPORTFOLIO_ITEMS_IMAGE_DESC" required="true" />
 		<field name="description" label="COM_SPSIMPLEPORTFOLIO_ITEMS_DESCRIPTION_LABEL" type="editor" filter="JComponentHelper::filterText" buttons="true" />

@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.3" type="component" method="upgrade">
-	<name>SP Simple Portfolio</name>
-	<creationDate>December 2015</creationDate>
-	<author>JoomShaper</author>
-	<authorEmail>support@joomshaper.com</authorEmail>
-	<authorUrl>http://www.joomshaper.com</authorUrl>
-	<copyright>Copyright (c) 2010- 2018 JoomShaper. All rights reserved.</copyright>
-	<license>GNU General Public License version 2 or later</license>
-	<version>1.6</version>
-	<description>Simple Portfolio Component for Joomla 3.3+</description>
+	<name>PSU gallery</name>
+	<creationDate>May 2018</creationDate>
+	<author>PSU</author>
+	<authorEmail>support@pdu.by</authorEmail>
+	<authorUrl>http://www.psu.by</authorUrl>
+	<copyright>Copyright (c) 2010- 2018 PSU. All rights reserved.</copyright>
+	<version>0.1</version>
+	<description>PSU gallery Component for Joomla 3.3+</description>
 
 	<updateservers>
-		<server type="extension" priority="1" name="SP Simple Portfolio">http://www.joomshaper.com/updates/com-sp-simple-portfolio.xml</server>
+		<server type="extension" priority="1" name="PSU gallery">http://www.psu.by/updates/com-sp-simple-portfolio.xml</server>
 	</updateservers>
 
 	<files folder="site">
