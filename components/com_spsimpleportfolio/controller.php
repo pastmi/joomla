@@ -141,7 +141,7 @@ class SpsimpleportfolioController extends JControllerLegacy {
                 $option->count_of_images = count($tags);
             }
             $response['list'] = $options;
-            $response['count_of_pages'] = ( $count <= 10) ? 1 : ceil($count/10);
+            $response['count_of_pages'] = ( $count <= 9) ? 1 : ceil($count/10);
             echo new JResponseJson($response);
         }
         catch(Exception $e)
